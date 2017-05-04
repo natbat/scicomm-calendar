@@ -9,7 +9,7 @@ This repository consists of:
 - The source for the url listed above which is hosted on Github pages and embeds a calendar of the games in their various timezones, maintained by hand by [@natbat](http://twitter.com/natbat)
 - Image and asset files for the above website and Twitter account. Awesome logo design by [@thonoir](http://twitter.com/thonoir).
 
-If we are missing any games that should be added to the config, feel free to do a pull request to this repository. To get this then added to the calendar please contact  on Twitter with the times the competition and answer are posted as well as details of the person who runs it, the hashtag and [@natbat](http://twitter.com/natbat) the timezone/location of the person who runs it.
+If we are missing any games that should be added to the config, feel free to do a pull request to this repository. To get added to the calendar please contact [@natbat](http://twitter.com/natbat) on Twitter with the times the competition and answer are posted as well as details of the person who runs it, the hashtag and the timezone/location of the person who runs it.
 
 Code and assets released under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States (CC BY-NC-SA 3.0 US)
 https://creativecommons.org/licenses/by-nc-sa/3.0/us/
