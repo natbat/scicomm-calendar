@@ -13,7 +13,7 @@
 	},
 	"DamOrNot": {
 		"hashtag": "DamOrNot",
-		"user" : "drmichellelarue"
+		"user" : "ConnectedWaters"
 	},
 	"NameThatCarcass": {
 		"hashtag": "NameThatCarcass",
@@ -54,5 +54,13 @@
 	"skullSunday": {
 		"hashtag": "skullSunday",
 		"user" : "crazybonelady"
+	},
+	"namethatmammal": {
+		"hashtag": "namethatmammal",
+		"user" : "thonoir"
+	},
+	"skullSunday": {
+		"hashtag": "wholaidit",
+		"user" : "CoopSciScoop"
 	}
 }
