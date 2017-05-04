@@ -1,66 +1,66 @@
-{
-	"CougarOrNot": {
-		"hashtag": "CougarOrNot",
-		"user" : "drmichellelarue"
-	},
-	"NotAVampireBat": {
-		"hashtag": "NotAVampireBat",
-		"user" : "alyb_batgirl"
-	},
-	"CrowOrNo": {
-		"hashtag": "CrowOrNo",
-		"user" : "corvidresearch"
-	},
-	"DamOrNot": {
-		"hashtag": "DamOrNot",
-		"user" : "ConnectedWaters"
-	},
-	"NameThatCarcass": {
-		"hashtag": "NameThatCarcass",
-		"user" : "Tingo_89"
-	},
-	"AreYouSiO2": {
-		"hashtag": "AreYouSiO2",
-		"user" : "NadWGab"
-	},
-	"CityNatureQuiz": {
-		"hashtag": "CityNatureQuiz",
-		"user" : "MetroFieldGuide"
-	},
-	"ButtOfWhat": {
-		"hashtag": "ButtOfWhat",
-		"user" : "BittelMeThis"
-	},
-	"GuessTheCrest": {
-		"hashtag": "GuessTheCrest",
-		"user" : "alexevans91"
-	},
-	"NameThatTrack": {
-		"hashtag": "NameThatTrack",
-		"user" : "lisavipes"
-	},
-	"TrickyBirdID": {
-		"hashtag": "TrickyBirdID",
-		"user" : "JasonWardNY"
-	},
-	"KnowOneNose": {
-		"hashtag": "KnowOneNose",
-		"user" : "shelbybohn"
-	},
-	"underratedungulate": {
-		"hashtag": "underratedungulate",
-		"user" : "m_davis8802"
-	},
-	"skullSunday": {
-		"hashtag": "skullSunday",
-		"user" : "crazybonelady"
-	},
-	"namethatmammal": {
-		"hashtag": "namethatmammal",
-		"user" : "thonoir"
-	},
-	"skullSunday": {
-		"hashtag": "wholaidit",
-		"user" : "CoopSciScoop"
-	}
-}
+[
+    {
+        "hashtag": "CougarOrNot",
+        "user": "drmichellelarue"
+    },
+    {
+        "hashtag": "NotAVampireBat",
+        "user": "alyb_batgirl"
+    },
+    {
+        "hashtag": "CrowOrNo",
+        "user": "corvidresearch"
+    },
+    {
+        "hashtag": "DamOrNot",
+        "user": "ConnectedWaters"
+    },
+    {
+        "hashtag": "NameThatCarcass",
+        "user": "Tingo_89"
+    },
+    {
+        "hashtag": "AreYouSiO2",
+        "user": "NadWGab"
+    },
+    {
+        "hashtag": "CityNatureQuiz",
+        "user": "MetroFieldGuide"
+    },
+    {
+        "hashtag": "ButtOfWhat",
+        "user": "BittelMeThis"
+    },
+    {
+        "hashtag": "GuessTheCrest",
+        "user": "alexevans91"
+    },
+    {
+        "hashtag": "NameThatTrack",
+        "user": "lisavipes"
+    },
+    {
+        "hashtag": "TrickyBirdID",
+        "user": "JasonWardNY"
+    },
+    {
+        "hashtag": "KnowOneNose",
+        "user": "shelbybohn"
+    },
+    {
+        "hashtag": "underratedungulate",
+        "user": "m_davis8802"
+    },
+    {
+        "hashtag": "skullSunday",
+        "user": "crazybonelady"
+    },
+    {
+        "hashtag": "namethatmammal",
+        "user": "thonoir"
+    },
+    {
+        "hashtag": "wholaidit",
+        "user": "CoopSciScoop"
+    }
+]
