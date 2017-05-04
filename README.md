@@ -1,7 +1,8 @@
 # SciComm Twitter Hashtag Games
 
 All your favourite SciComm Twitter hashtag games in one place!
-VIEW PAGE AND MORE DETAILS HERE: https://natbat.github.io/scicomm-calendar/
+
+*VIEW PAGE AND MORE DETAILS HERE: https://natbat.github.io/scicomm-calendar/*
 
 This repository consists of:
 - The config file and script which runs on Heroku ever 10mins against the Twitter API to automatically retweet the tweets for the various twitter hashtag games to the account @SciCommGames
