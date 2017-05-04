@@ -1,5 +1,4 @@
-
-* SciComm Twitter Hashtag Games
+# SciComm Twitter Hashtag Games
 
 All your favourite SciComm Twitter hashtag games in one place!
 VIEW PAGE AND MORE DETAILS HERE: https://natbat.github.io/scicomm-calendar/
@@ -11,7 +10,8 @@ This repository consists of:
 
 If we are missing any games that should be added to the config, feel free to do a pull request to this repository. To get this then added to the calendar please contact @natbat on Twitter with the times the competition and answer are posted as well as details of the person who runs it, the hashtag and the timezone/location of the person who runs it.
 
-Code and assets released under the Creative Commons 
+Code and assets released under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States (CC BY-NC-SA 3.0 US)
+https://creativecommons.org/licenses/by-nc-sa/3.0/us/
 
 ----
-by @natbat with help from @simonw and @thonoir with original game data collection by
+by @natbat with help from @simonw and @thonoir with original game data collection by ‪@WildlifeBioGal‬
