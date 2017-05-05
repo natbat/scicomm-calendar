@@ -7,6 +7,7 @@ import twitter
 
 
 api = twitter.Api(
+    tweet_mode='extended',
     consumer_key=os.environ['CONSUMER_KEY'],
     consumer_secret=os.environ['CONSUMER_SECRET'],
     access_token_key=os.environ['ACCESS_TOKEN_KEY'],
@@ -31,7 +32,7 @@ def tweet_matches_rules(tweet, rules):
 
 def tweet_matches_rule(tweet, rule):
     screen_name = tweet.user.screen_name.lower()
-    text = tweet.text.lower()
+    text = tweet.full_text.lower()
     return (screen_name == rule['user'].lower()) and (rule['hashtag'].lower() in text)
 
 
@@ -45,7 +46,7 @@ def scan_and_retweet():
     # For every tweet, see if it matches a rule
     for tweet in reversed(tweets):
         print
-        print "Considering %r" % tweet.text
+        print "Considering %r" % tweet.full_text
         # Have we retweeted this already?
         if tweet.retweeted:
             print "  Skipping, we have retweeted already"
