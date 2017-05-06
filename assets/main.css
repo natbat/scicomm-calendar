@@ -14,7 +14,7 @@ body {
 
 
 .intro {
-    font-size: 1.25em
+    font-size: 1.25em;
 }
 h2 {
     font-size: 1.5em;
@@ -104,9 +104,14 @@ section {
 }
 
 @media only screen and (max-width: 600px) {
+    section,
+    footer {
+        padding-right: 1em;
+        padding-left: 1em;
+    }
     header {
-        padding-right: 10em;
-        padding-left: 2em;
+        padding-right: 9em;
+        padding-left: 1em;
     }
     header .logo { 
         margin-right: -8em;
@@ -116,6 +121,10 @@ section {
     header h1 {
         font-size: 1.25em;
         margin-bottom: 0.3em;
+    }
+    .intro {
+        font-size: 1.125em;
+        margin-top: 0;
     }
     header .intro {
         font-size: 1em;
