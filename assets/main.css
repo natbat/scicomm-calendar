@@ -11,39 +11,8 @@ body {
     margin: 0;
     padding: 0;
 }
-header {
-    border-bottom: 7px solid #373535;
-    padding: 1.5em 2em 1em 10em;
-    overflow: hidden;
-}
-header .logo { 
-    width: 6em;
-    margin-left: -8em;
-    float: left;
-}
-header h1 {
-    font-size: 3em;
-    line-height: 1;
-    margin: 0 0 0.2em 0;
-    padding: 0
 
-}
-header .intro {
-    font-size: 1.625em;
-    margin: 0;
-}
-footer {
-    padding: 1em 2em;
-    border-top: 7px solid #373535;
-    margin-top: 1em;
-}
-section {
-    padding: 1em 2em;
-}
-.cal {
-    padding: 1em 0;
-    clear:both;
-}
+
 .intro {
     font-size: 1.25em
 }
@@ -71,6 +40,54 @@ a:hover,
 a:focus,
 a:active {
     color: #17C17C;
+}
+
+
+
+header {
+    border-bottom: 7px solid #373535;
+    padding: 1.5em 2em 1em 10em;
+    overflow: hidden;
+}
+header .logo-link,
+header .logo-link:link,
+header .logo-link:hover,
+header .logo-link:visited,
+header .logo-link:focus,
+header .logo-link:active {
+    border: none;
+    color: #373535;
+    display: block;
+}
+
+header .logo { 
+    width: 6em;
+    margin-left: -8em;
+    float: left;
+}
+header h1 {
+    font-size: 3em;
+    line-height: 1;
+    margin: 0 0 0.2em 0;
+    padding: 0
+
+}
+header .intro {
+    font-size: 1.625em;
+    margin: 0;
+}
+footer {
+    padding: 1em 2em;
+    border-top: 7px solid #373535;
+    margin-top: 1em;
+}
+section {
+    padding: 1em 2em;
+}
+.cal {
+    padding: 1em 0;
+    clear: both;
+    overflow: auto;
 }
 
 @media only screen and (max-width: 600px) {
