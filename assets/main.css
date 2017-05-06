@@ -13,10 +13,8 @@ body {
 }
 header {
     border-bottom: 7px solid #373535;
-    margin-bottom: 0.5;
     padding: 1.5em 2em 1em 10em;
     overflow: hidden;
-
 }
 header .logo { 
     width: 6em;
@@ -25,8 +23,10 @@ header .logo {
 }
 header h1 {
     font-size: 3em;
-    margin: 0;
+    line-height: 1;
+    margin: 0 0 0.2em 0;
     padding: 0
+
 }
 header .intro {
     font-size: 1.625em;
@@ -73,3 +73,21 @@ a:active {
     color: #17C17C;
 }
 
+@media only screen and (max-width: 600px) {
+    header {
+        padding-right: 10em;
+        padding-left: 2em;
+    }
+    header .logo { 
+        margin-right: -8em;
+        margin-left: 0;
+        float: right;
+    }
+    header h1 {
+        font-size: 1.25em;
+        margin-bottom: 0.3em;
+    }
+    header .intro {
+        font-size: 1em;
+    }
+}
