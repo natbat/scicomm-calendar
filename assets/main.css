@@ -1,0 +1,75 @@
+
+html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #373535;
+    margin: 0;
+    padding: 0;
+}
+header {
+    border-bottom: 7px solid #373535;
+    margin-bottom: 0.5;
+    padding: 1.5em 2em 1em 10em;
+    overflow: hidden;
+
+}
+header .logo { 
+    width: 6em;
+    margin-left: -8em;
+    float: left;
+}
+header h1 {
+    font-size: 3em;
+    margin: 0;
+    padding: 0
+}
+header .intro {
+    font-size: 1.625em;
+    margin: 0;
+}
+footer {
+    padding: 1em 2em;
+    border-top: 7px solid #373535;
+    margin-top: 1em;
+}
+section {
+    padding: 1em 2em;
+}
+.cal {
+    padding: 1em 0;
+    clear:both;
+}
+.intro {
+    font-size: 1.25em
+}
+h2 {
+    font-size: 1.5em;
+    margin-top: 2em;
+
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    border-bottom: 1px solid;
+}
+a,
+a:link,
+a:visited {
+    color: #13935E;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #17C17C;
+}
+
