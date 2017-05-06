@@ -87,7 +87,20 @@ section {
 .cal {
     padding: 1em 0;
     clear: both;
-    overflow-x: scroll;
+    position: relative; 
+    padding-bottom: 75%; 
+    height: 0; 
+    overflow: hidden;
+ 
+}
+ 
+.cal iframe {
+    position: absolute; 
+    top:0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+ 
 }
 
 @media only screen and (max-width: 600px) {
