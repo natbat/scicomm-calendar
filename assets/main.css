@@ -87,7 +87,7 @@ section {
 .cal {
     padding: 1em 0;
     clear: both;
-    overflow: auto;
+    overflow-x: scroll;
 }
 
 @media only screen and (max-width: 600px) {
