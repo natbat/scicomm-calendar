@@ -6,7 +6,7 @@ html {
 body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
-    line-height: 1.25;
+    line-height: 1.375;
     color: #373535;
     margin: 0;
     padding: 0;
@@ -58,6 +58,7 @@ header .logo-link:active {
     border: none;
     color: #373535;
     display: block;
+    text-decoration: none;
 }
 
 header .logo { 
