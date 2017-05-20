@@ -17,43 +17,52 @@ api = twitter.Api(
 
 def fetch_rules():
     return json.loads(
-        requests.get(
-            'https://api.github.com/repos/natbat/scicomm-calendar/contents/config.json'
-        ).json()['content'].decode('base64')
+        # Read the local config file and convert to lower case
+        open("config.json").read().lower()
     )
 
 
 def tweet_matches_rules(tweet, rules):
-    for rule in rules:
-        if tweet_matches_rule(tweet, rule):
-            return True
-    return False
-
-
-def tweet_matches_rule(tweet, rule):
+    # Extract information about the tweet
     screen_name = tweet.user.screen_name.lower()
     text = tweet.full_text.lower()
-    return (screen_name == rule['user'].lower()) and (rule['hashtag'].lower() in text)
+
+    if screen_name in rules:
+
+        # For this User, what list of hashtags are we looking at
+        hashtags = rules[screen_name]
+
+        # If any of the above hashtags is present in the text then it matches
+        for hashtag in hashtags:
+            if hashtag in text:
+                return True
+
+    # If we get here then no hashtags matched that tweet for that usert
+    return False
 
 
 def scan_and_retweet():
     # Fetch 200 recent tweets from users we follow
     tweets = api.GetHomeTimeline(count=200)
     print "Fetched %d tweets" % len(tweets)
+
     # Fetch our rules from github
     rules = fetch_rules()
     print "Fetched %d rules" % len(rules)
+
     # For every tweet, see if it matches a rule
     for tweet in reversed(tweets):
         print
-        print "Considering %r" % tweet.full_text
+        print "CONSIDER @%s \"%r\"" % (tweet.user.screen_name, tweet.full_text)
+
         # Have we retweeted this already?
         if tweet.retweeted:
-            print "  Skipping, we have retweeted already"
+            print "  SKIPPING, we have retweeted already"
             continue
+
         # Does it match a rule?
         elif tweet_matches_rules(tweet, rules):
-            print "  Matched a rule! Gonna retweet it"
+            print "  TWEETING Matched a rule! Gonna retweet it"
             # Retweet it!
             print api.PostRetweet(tweet.id)
             # Sleep before next possible retweet

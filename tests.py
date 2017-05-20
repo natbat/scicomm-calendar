@@ -1,5 +1,5 @@
 import unittest
-from scan_and_retweet import tweet_matches_rule
+from scan_and_retweet import tweet_matches_rules
 
 
 class FakeUser(object):
@@ -13,12 +13,14 @@ class FakeTweet(object):
         self.full_text = full_text
 
 
-class TestTweetMatchesRule(unittest.TestCase):
+class TestTweetMatchesRules(unittest.TestCase):
     def test_basic(self):
         tweet = FakeTweet('natbat', 'I like #hedgehogs')
-        rule = {'user': 'natbat', 'hashtag': 'hedgehogs'}
-        self.assertTrue(tweet_matches_rule(tweet, rule))
+        rules = {"natbat": ["hedgehogs"]}
+        self.assertTrue(tweet_matches_rules(tweet, rules))
 
+
+# TODO break if the config file is valid
 
 if __name__ == '__main__':
     unittest.main()

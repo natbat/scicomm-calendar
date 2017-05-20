@@ -1,74 +1,54 @@
-[
-    {
-        "hashtag": "CougarOrNot",
-        "user": "drmichellelarue"
-    },
-    {
-        "hashtag": "NotAVampireBat",
-        "user": "alyb_batgirl"
-    },
-    {
-        "hashtag": "CrowOrNo",
-        "user": "corvidresearch"
-    },
-    {
-        "hashtag": "DamOrNot",
-        "user": "ConnectedWaters"
-    },
-    {
-        "hashtag": "NameThatCarcass",
-        "user": "Tingo_89"
-    },
-    {
-        "hashtag": "AreYouSiO2",
-        "user": "NadWGab"
-    },
-    {
-        "hashtag": "CityNatureQuiz",
-        "user": "MetroFieldGuide"
-    },
-    {
-        "hashtag": "ButtOfWhat",
-        "user": "BittelMeThis"
-    },
-    {
-        "hashtag": "GuessTheCrest",
-        "user": "alexevans91"
-    },
-    {
-        "hashtag": "NameThatTrack",
-        "user": "lisavipes"
-    },
-    {
-        "hashtag": "TrickyBirdID",
-        "user": "JasonWardNY"
-    },
-    {
-        "hashtag": "CoopOrSharpie",
-        "user": "JasonWardNY"
-    },
-    {
-        "hashtag": "KnowOneNose",
-        "user": "shelbybohn"
-    },
-    {
-        "hashtag": "underratedungulate",
-        "user": "m_davis8802"
-    },
-    {
-        "hashtag": "skullSunday",
-        "user": "crazybonelady"
-    },
-    {
-        "hashtag": "namethatmammal",
-        "user": "thonoir"
-    },
-    {
-        "hashtag": "wholaidit",
-        "user": "CoopSciScoop"
-    },
-    {
-        "hashtag": "whosescatisthat",
-        "user": "‪cullenanthonyc‬‪‬"
-    }
-]
+{
+    "drmichellelarue": [
+        "CougarOrNot"
+    ],
+    "alyb_batgirl": [
+        "NotAVampireBat"
+    ],
+    "corvidresearch": [
+        "CrowOrNo"
+    ],
+    "ConnectedWaters": [
+        "DamOrNot"
+    ],
+    "Tingo_89": [
+        "NameThatCarcass"
+    ],
+    "NadWGab": [
+        "AreYouSiO2"
+    ],
+    "MetroFieldGuide": [
+        "CityNatureQuiz"
+    ],
+    "BittelMeThis": [
+        "ButtOfWhat"
+    ],
+    "alexevans91": [
+        "GuessTheCrest"
+    ],
+    "lisavipes": [
+        "NameThatTrack"
+    ],
+    "JasonWardNY": [
+        "TrickyBirdID",
+        "CoopOrSharpie"
+    ],
+    "shelbybohn": [
+        "KnowOneNose"
+    ],
+    "m_davis8802": [
+        "underratedUngulate"
+    ],
+    "crazybonelady": [
+        "skullSunday"
+    ],
+    "thonoir": [
+        "namethatmammal"
+    ],
+    "CoopSciScoop": [
+        "wholaidit"
+    ],
+    "‪cullenanthonyc‬‪‬": [
+        "whoseScatIsThat"
+    ]
+}
