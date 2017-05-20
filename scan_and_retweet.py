@@ -22,10 +22,10 @@ def fetch_rules():
     )
 
 
-def tweet_matches_rules(tweet, rules):
+def tweet_matches_rules(screen_name, full_text, rules):
     # Extract information about the tweet
-    screen_name = tweet.user.screen_name.lower()
-    text = tweet.full_text.lower()
+    screen_name = screen_name.lower()
+    full_text = full_text.lower()
 
     if screen_name in rules:
 
@@ -34,7 +34,7 @@ def tweet_matches_rules(tweet, rules):
 
         # If any of the above hashtags is present in the text then it matches
         for hashtag in hashtags:
-            if hashtag in text:
+            if hashtag in full_text:
                 return True
 
     # If we get here then no hashtags matched that tweet for that usert
@@ -61,7 +61,7 @@ def scan_and_retweet():
             continue
 
         # Does it match a rule?
-        elif tweet_matches_rules(tweet, rules):
+        elif tweet_matches_rules(tweet.user.screen_name, tweet.full_text, rules):
             print "  TWEETING Matched a rule! Gonna retweet it"
             # Retweet it!
             print api.PostRetweet(tweet.id)
