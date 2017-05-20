@@ -1,5 +1,7 @@
 # SciComm Twitter Hashtag Games
 
+[![Build Status](https://travis-ci.org/natbat/scicomm-calendar.svg?branch=master)](https://travis-ci.org/natbat/scicomm-calendar)
+
 All your favourite SciComm Twitter hashtag games in one place!
 
 *VIEW PAGE AND MORE DETAILS HERE: https://natbat.github.io/scicomm-calendar/*
