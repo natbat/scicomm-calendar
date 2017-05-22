@@ -34,7 +34,7 @@ def tweet_matches_rules(screen_name, full_text, rules):
 
         # If any of the above hashtags is present in the text then it matches
         for hashtag in hashtags:
-            if hashtag in full_text:
+            if ("#"+hashtag) in full_text:
                 return True
 
     # If we get here then no hashtags matched that tweet for that usert
