@@ -42,6 +42,12 @@ class TestTweetMatchesRules(unittest.TestCase):
         rules = {"natbat": ["hedgehogornot"]}
         self.assertFalse(tweet_matches_rules(screen_name, full_text, rules))
 
+    def test_rule_empty_list_means_wildcard(self):
+        screen_name = "AllYourHedgehogs"
+        full_text = "One hedgehog to rule them all!"
+        rules = {"allyourhedgehogs": []}
+        self.assertTrue(tweet_matches_rules(screen_name, full_text, rules))
+
 
 if __name__ == '__main__':
     unittest.main()

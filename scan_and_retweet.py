@@ -23,6 +23,11 @@ def tweet_matches_rules(screen_name, full_text, rules):
         # For this User, what list of hashtags are we looking at
         hashtags = rules[screen_name]
 
+        # Retweet everything from an account if we have configured it
+        # with a wildcard, represented as an empty list
+        if [] == hashtags:
+            return True
+
         # If any of the above hashtags is present in the text then it matches
         for hashtag in hashtags:
             if ("#"+hashtag) in full_text:
