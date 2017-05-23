@@ -1,9 +1,13 @@
 import json
 import time
 import os
+import sys
 
 import requests
 import twitter
+
+# Number of home timeline tweets to fetch in each batch of pagination
+BATCH_SIZE = 200
 
 
 def fetch_rules():
@@ -37,34 +41,49 @@ def tweet_matches_rules(screen_name, full_text, rules):
     return False
 
 
-def scan_and_retweet(api):
-    # Fetch 200 recent tweets from users we follow
-    tweets = api.GetHomeTimeline(count=200)
-    print "Fetched %d tweets" % len(tweets)
+def get_tweets(api, num_pages_to_fetch=1):
+    # Fetch BATCH_SIZE recent tweets from users we follow
+    max_id = None
+    tweets = []
+    for i in range(num_pages_to_fetch):
+        print 'max_id: %r' % max_id
+        tweets.extend(
+            api.GetHomeTimeline(
+                count=BATCH_SIZE,
+                max_id=max_id
+            )
+        )
+        max_id = min([tweet.id for tweet in tweets]) - 1
+    print "FETCHED %d tweets" % len(tweets)
+    print
+    return tweets
 
-    # Fetch our rules from github
+
+def scan_and_retweet(tweets):
+    # Fetch our rules
     rules = fetch_rules()
-    print "Fetched %d rules" % len(rules)
+    print "LOADED %d rules" % len(rules)
 
     # For every tweet, see if it matches a rule
     for tweet in reversed(tweets):
+        print
         print tweet.AsJsonString()
-        print
-        print
         print "CONSIDER @%s \"%r\"" % (tweet.user.screen_name, tweet.full_text)
 
         # Have we retweeted this already?
         if tweet.retweeted:
-            print "  SKIPPING, we have retweeted already"
+            print "...  SKIPPING, we have retweeted already"
             continue
 
         # Does it match a rule?
         elif tweet_matches_rules(tweet.user.screen_name, tweet.full_text, rules):
-            print "  TWEETING Matched a rule! Gonna retweet it"
+            print "...  TWEETING Matched a rule! Gonna retweet it"
             # Retweet it!
             print api.PostRetweet(tweet.id)
             # Sleep before next possible retweet
             time.sleep(2.5)
+        else:
+            print "...  IGNORING"
 
 
 if __name__ == '__main__':
@@ -75,4 +94,12 @@ if __name__ == '__main__':
         access_token_key=os.environ['ACCESS_TOKEN_KEY'],
         access_token_secret=os.environ['ACCESS_TOKEN_SECRET'],
     )
-    scan_and_retweet(api)
+    num_pages_to_fetch = 1
+
+    if '--backfill' in sys.argv:
+        print "Running backfill (last 800 tweets)"
+        num_pages_to_fetch = 4
+
+    tweets = get_tweets(api, num_pages_to_fetch)
+    scan_and_retweet(tweets)
+
