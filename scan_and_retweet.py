@@ -6,15 +6,6 @@ import requests
 import twitter
 
 
-api = twitter.Api(
-    tweet_mode='extended',
-    consumer_key=os.environ['CONSUMER_KEY'],
-    consumer_secret=os.environ['CONSUMER_SECRET'],
-    access_token_key=os.environ['ACCESS_TOKEN_KEY'],
-    access_token_secret=os.environ['ACCESS_TOKEN_SECRET'],
-)
-
-
 def fetch_rules():
     return json.loads(
         # Read the local config file and convert to lower case
@@ -41,7 +32,7 @@ def tweet_matches_rules(screen_name, full_text, rules):
     return False
 
 
-def scan_and_retweet():
+def scan_and_retweet(api):
     # Fetch 200 recent tweets from users we follow
     tweets = api.GetHomeTimeline(count=200)
     print "Fetched %d tweets" % len(tweets)
@@ -52,6 +43,8 @@ def scan_and_retweet():
 
     # For every tweet, see if it matches a rule
     for tweet in reversed(tweets):
+        print tweet.AsJsonString()
+        print
         print
         print "CONSIDER @%s \"%r\"" % (tweet.user.screen_name, tweet.full_text)
 
@@ -70,4 +63,11 @@ def scan_and_retweet():
 
 
 if __name__ == '__main__':
-    scan_and_retweet()
+    api = twitter.Api(
+        tweet_mode='extended',
+        consumer_key=os.environ['CONSUMER_KEY'],
+        consumer_secret=os.environ['CONSUMER_SECRET'],
+        access_token_key=os.environ['ACCESS_TOKEN_KEY'],
+        access_token_secret=os.environ['ACCESS_TOKEN_SECRET'],
+    )
+    scan_and_retweet(api)
