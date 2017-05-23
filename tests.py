@@ -1,4 +1,7 @@
 import unittest
+import json
+import unicodedata
+import re
 from scan_and_retweet import tweet_matches_rules
 
 class TestTweetMatchesRules(unittest.TestCase):
@@ -47,6 +50,33 @@ class TestTweetMatchesRules(unittest.TestCase):
         full_text = "One hedgehog to rule them all!"
         rules = {"allyourhedgehogs": []}
         self.assertTrue(tweet_matches_rules(screen_name, full_text, rules))
+
+
+
+class TestSanityCheckConfig(unittest.TestCase):
+
+    def test_config_is_valid_json(self):
+        try:
+            json.load(open('config.json'))
+        except ValueError, e:
+            self.fail('Invalid JSON in config file')
+
+    def test_config_has_no_weird_characters(self):
+        """
+        On occasion, editing code on a phone can accidentally introduce weird
+        invisible characters which break the bot. Check that the config file
+        only includes alphanumeric characters and JSON punctuation.
+        """
+        allowed_chars_regex = re.compile(r'[^a-zA-Z0-9\[\]\{\}\s":,_]')
+        with open('config.json') as fp:
+            contents = fp.read().decode('utf8')
+        match = allowed_chars_regex.search(contents)
+        if match:
+            weird_char = match.group(0)
+            line_number = contents[:match.start()].count('\n') + 1
+            self.fail('config.json contains a weird character on line %d: %s %r' % (
+                line_number, unicodedata.name(weird_char), weird_char
+            ))
 
 
 if __name__ == '__main__':
