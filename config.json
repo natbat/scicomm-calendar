@@ -15,7 +15,8 @@
         "NameThatCarcass"
     ],
     "NadWGab": [
-        "AreYouSiO2"
+        "AreYouSiO2",
+        "QuartzCup"
     ],
     "MetroFieldGuide": [
         "CityNatureQuiz"
@@ -58,9 +59,20 @@
         "BIRDQUIZ"
     ],
     "MacrobirdEvol": [
-        "BeakoftheWeek"
+        "BeakoftheWeek",
+        "PlumagePuzzle"
     ],
     "MsLissEcologist": [
         "IsItPoisonIvy"
+    ],
+    "setophaga": [
+        "namethatbirdsong"
+    ],
+    "juleslhoward": [
+        "earlyzoo"
+    ],
+    "slziegler220": [
+        "whatfishwednesday"
     ]
+
 }
