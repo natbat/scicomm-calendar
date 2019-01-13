@@ -19,7 +19,8 @@
         "QuartzCup"
     ],
     "MetroFieldGuide": [
-        "CityNatureQuiz"
+        "CityNatureQuiz",
+        "StreetCreatures"
     ],
     "BittelMeThis": [
         "ButtOfWhat"
@@ -38,7 +39,8 @@
         "KnowOneNose"
     ],
     "m_davis8802": [
-        "underratedUngulate"
+        "underratedUngulate",
+        "mammalsvsbirds"
     ],
     "crazybonelady": [
         "skullSunday"
@@ -76,6 +78,41 @@
     ],
     "janinekrippner": [
         "volcanocup"
+    ],
+    "LkSuperiorNMCA": [
+        "NameThatAnimal"
+    ],
+    "Texosporium": [
+        "LichenOrNot"
+    ],
+    "MicroEarthSci": [
+        "SuperSundayStructures"
+    ],
+    "2019MMMletsgo": [
+        "2019MMM"
+    ],
+    "SeattleAudubon": [
+        "WhatIsItWednesday"
+    ],
+    "WildlifeMag": [
+        "mondaymystery",
+        "captioncompetition"
+    ],
+    "MyFrogCroaked": [
+        "NameThatThing"
+    ],
+    "rdriver215": [
+        "GuessThatRange"
+    ],
+    "grizzlygirl87": [
+        "KnockKnockWhosBear"
+    ],
+    "RecluseOrNot": [
+        "recluseornot"
+    ],
+    "Afro_Herper": [
+        "FoundThatLizard",
+        "FindThatLizard"
     ]
 
 }
