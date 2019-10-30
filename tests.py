@@ -58,7 +58,7 @@ class TestSanityCheckConfig(unittest.TestCase):
     def test_config_is_valid_json(self):
         try:
             json.load(open('config.json'))
-        except ValueError, e:
+        except ValueError as e:
             self.fail('Invalid JSON in config file')
 
     def test_config_has_no_weird_characters(self):
