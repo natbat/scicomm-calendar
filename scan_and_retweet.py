@@ -46,7 +46,7 @@ def get_tweets(api, num_pages_to_fetch=1):
     max_id = None
     tweets = []
     for i in range(num_pages_to_fetch):
-        print 'max_id: %r' % max_id
+        print('max_id: %r' % max_id)
         tweets.extend(
             api.GetHomeTimeline(
                 count=BATCH_SIZE,
@@ -54,36 +54,36 @@ def get_tweets(api, num_pages_to_fetch=1):
             )
         )
         max_id = min([tweet.id for tweet in tweets]) - 1
-    print "FETCHED %d tweets" % len(tweets)
-    print
+    print("FETCHED %d tweets" % len(tweets))
+    print()
     return tweets
 
 
 def scan_and_retweet(tweets):
     # Fetch our rules
     rules = fetch_rules()
-    print "LOADED %d rules" % len(rules)
+    print("LOADED %d rules" % len(rules))
 
     # For every tweet, see if it matches a rule
     for tweet in reversed(tweets):
-        print
-        print tweet.AsJsonString()
-        print "CONSIDER @%s \"%r\"" % (tweet.user.screen_name, tweet.full_text)
+        print()
+        print(tweet.AsJsonString())
+        print("CONSIDER @%s \"%r\"" % (tweet.user.screen_name, tweet.full_text))
 
         # Have we retweeted this already?
         if tweet.retweeted:
-            print "...  SKIPPING, we have retweeted already"
+            print("...  SKIPPING, we have retweeted already")
             continue
 
         # Does it match a rule?
         elif tweet_matches_rules(tweet.user.screen_name, tweet.full_text, rules):
-            print "...  TWEETING Matched a rule! Gonna retweet it"
+            print("...  TWEETING Matched a rule! Gonna retweet it")
             # Retweet it!
-            print api.PostRetweet(tweet.id)
+            print(api.PostRetweet(tweet.id))
             # Sleep before next possible retweet
             time.sleep(2.5)
         else:
-            print "...  IGNORING"
+            print("...  IGNORING")
 
 
 if __name__ == '__main__':
@@ -97,7 +97,7 @@ if __name__ == '__main__':
     num_pages_to_fetch = 1
 
     if '--backfill' in sys.argv:
-        print "Running backfill (last 800 tweets)"
+        print("Running backfill (last 800 tweets)")
         num_pages_to_fetch = 4
 
     tweets = get_tweets(api, num_pages_to_fetch)

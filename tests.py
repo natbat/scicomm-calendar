@@ -58,7 +58,7 @@ class TestSanityCheckConfig(unittest.TestCase):
     def test_config_is_valid_json(self):
         try:
             json.load(open('config.json'))
-        except ValueError, e:
+        except ValueError as e:
             self.fail('Invalid JSON in config file')
 
     def test_config_has_no_weird_characters(self):
@@ -69,7 +69,7 @@ class TestSanityCheckConfig(unittest.TestCase):
         """
         allowed_chars_regex = re.compile(r'[^a-zA-Z0-9\[\]\{\}\s":,_]')
         with open('config.json') as fp:
-            contents = fp.read().decode('utf8')
+            contents = fp.read()
         match = allowed_chars_regex.search(contents)
         if match:
             weird_char = match.group(0)
