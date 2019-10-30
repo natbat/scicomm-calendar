@@ -69,7 +69,7 @@ class TestSanityCheckConfig(unittest.TestCase):
         """
         allowed_chars_regex = re.compile(r'[^a-zA-Z0-9\[\]\{\}\s":,_]')
         with open('config.json') as fp:
-            contents = fp.read().decode('utf8')
+            contents = fp.read()
         match = allowed_chars_regex.search(contents)
         if match:
             weird_char = match.group(0)
