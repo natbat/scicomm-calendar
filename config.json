@@ -3,7 +3,8 @@
         "CougarOrNot"
     ],
     "alyb_batgirl": [
-        "NotAVampireBat"
+        "NotAVampireBat",
+        "31BatsOfHalloween"
     ],
     "corvidresearch": [
         "CrowOrNo"
@@ -22,11 +23,16 @@
         "CityNatureQuiz",
         "StreetCreatures"
     ],
+    "KellyBrenner": [
+        "CityNatureQuiz",
+        "StreetCreatures"
+    ],
     "BittelMeThis": [
         "ButtOfWhat"
     ],
     "alexevans91": [
-        "GuessTheCrest"
+        "GuessTheCrest",
+        "BestOfCrest"
     ],
     "lisavipes": [
         "NameThatTrack"
@@ -54,6 +60,9 @@
     "cullenanthonyc": [
         "whoseScatIsThat"
     ],
+    "CREWTrust": [
+        "whoseScatIsThat"
+    ],
     "Blackmudpuppy": [
         "AxolotlOrNotl"
     ],
@@ -65,7 +74,8 @@
         "PlumagePuzzle"
     ],
     "MsLissEcologist": [
-        "IsItPoisonIvy"
+        "IsItPoisonIvy",
+        "drivethroughbotany"
     ],
     "setophaga": [
         "namethatbirdsong"
@@ -88,8 +98,8 @@
     "MicroEarthSci": [
         "SuperSundayStructures"
     ],
-    "2019MMMletsgo": [
-        "2019MMM"
+    "2021MMMletsgo": [
+        "2021MMM"
     ],
     "SeattleAudubon": [
         "WhatIsItWednesday"
@@ -112,7 +122,8 @@
     ],
     "Afro_Herper": [
         "FoundThatLizard",
-        "FindThatLizard"
+        "FindThatLizard",
+        "GuessThatLizard"
     ],
     "lonouri": [
         "WarbleWednesday"
@@ -123,5 +134,39 @@
     ],
     "UFsharkresearch": [
         "sharkclues"
+    ],
+    "GiveBatsABreak": [
+        "WhichBatIsThat",
+        "BatWC2021"
+    ],
+    "lars_brudvig": [
+        "BarkingUpATree"
+    ],
+    "wildflower_hour": [
+        "wildflowerhour"
+    ],
+    "Yara_Haridy": [
+        "GUESSTHESKULL"
+    ],
+    "coywolfassoc": [
+        "YoteOrNope"
+    ],
+    "Nv_pyromelana": [
+        "MojaveGreenOrNot"
+    ],
+    "primatweeps": [
+        "PrimatePlaytime"
+    ],
+    "KatmaiNPS": [
+        "FatBearWeek"
+    ],
+    "wayfaringwilly": [
+        "WhosePoo"
+    ],
+    "AaronJCorcoran": [
+        "NameThatBone"
+    ],
+    "evornithology": [
+        "bycatchoftheday"
     ]
 }
