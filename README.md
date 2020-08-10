@@ -1,6 +1,6 @@
 # SciComm Twitter Hashtag Games
 
-![Test](https://github.com/natbat/scicomm-calendar/workflows/Test/badge.svg?branch=master)
+![Test](https://github.com/natbat/scicomm-calendar/workflows/Test/badge.svg?branch=main)
 
 All your favourite SciComm Twitter hashtag games in one place!
 

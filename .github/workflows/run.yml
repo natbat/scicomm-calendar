@@ -3,7 +3,7 @@ name: Check and retweet scicomm games
 on:
   push:
     branches:
-    - master
+    - main
   workflow_dispatch:
   schedule:
     - cron: '3,13,23,33,43,53 * * * *'
