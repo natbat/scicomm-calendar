@@ -13,7 +13,9 @@ BATCH_SIZE = 200
 def fetch_rules():
     return json.loads(
         # Read the local config file and convert to lower case
-        open("config.json").read().lower()
+        open("config.json")
+        .read()
+        .lower()
     )
 
 
@@ -34,7 +36,7 @@ def tweet_matches_rules(screen_name, full_text, rules):
 
         # If any of the above hashtags is present in the text then it matches
         for hashtag in hashtags:
-            if ("#"+hashtag) in full_text:
+            if ("#" + hashtag) in full_text:
                 return True
 
     # If we get here then no hashtags matched that tweet for that usert
@@ -46,13 +48,8 @@ def get_tweets(api, num_pages_to_fetch=1):
     max_id = None
     tweets = []
     for i in range(num_pages_to_fetch):
-        print('max_id: %r' % max_id)
-        tweets.extend(
-            api.GetHomeTimeline(
-                count=BATCH_SIZE,
-                max_id=max_id
-            )
-        )
+        print("max_id: %r" % max_id)
+        tweets.extend(api.GetHomeTimeline(count=BATCH_SIZE, max_id=max_id))
         max_id = min([tweet.id for tweet in tweets]) - 1
     print("FETCHED %d tweets" % len(tweets))
     print()
@@ -68,7 +65,7 @@ def scan_and_retweet(tweets):
     for tweet in reversed(tweets):
         print()
         print(tweet.AsJsonString())
-        print("CONSIDER @%s \"%r\"" % (tweet.user.screen_name, tweet.full_text))
+        print('CONSIDER @%s "%r"' % (tweet.user.screen_name, tweet.full_text))
 
         # Have we retweeted this already?
         if tweet.retweeted:
@@ -86,20 +83,19 @@ def scan_and_retweet(tweets):
             print("...  IGNORING")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     api = twitter.Api(
-        tweet_mode='extended',
-        consumer_key=os.environ['CONSUMER_KEY'],
-        consumer_secret=os.environ['CONSUMER_SECRET'],
-        access_token_key=os.environ['ACCESS_TOKEN_KEY'],
-        access_token_secret=os.environ['ACCESS_TOKEN_SECRET'],
+        tweet_mode="extended",
+        consumer_key=os.environ["CONSUMER_KEY"],
+        consumer_secret=os.environ["CONSUMER_SECRET"],
+        access_token_key=os.environ["ACCESS_TOKEN_KEY"],
+        access_token_secret=os.environ["ACCESS_TOKEN_SECRET"],
     )
     num_pages_to_fetch = 1
 
-    if '--backfill' in sys.argv:
+    if "--backfill" in sys.argv:
         print("Running backfill (last 800 tweets)")
         num_pages_to_fetch = 4
 
     tweets = get_tweets(api, num_pages_to_fetch)
     scan_and_retweet(tweets)
-

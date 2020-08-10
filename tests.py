@@ -4,9 +4,10 @@ import unicodedata
 import re
 from scan_and_retweet import tweet_matches_rules
 
+
 class TestTweetMatchesRules(unittest.TestCase):
 
-    # All hashtags by the time they get to the tweet_matches_rules have been 
+    # All hashtags by the time they get to the tweet_matches_rules have been
     # already lowercased, so no need to test that
 
     def test_rule(self):
@@ -52,14 +53,12 @@ class TestTweetMatchesRules(unittest.TestCase):
         self.assertTrue(tweet_matches_rules(screen_name, full_text, rules))
 
 
-
 class TestSanityCheckConfig(unittest.TestCase):
-
     def test_config_is_valid_json(self):
         try:
-            json.load(open('config.json'))
+            json.load(open("config.json"))
         except ValueError as e:
-            self.fail('Invalid JSON in config file')
+            self.fail("Invalid JSON in config file")
 
     def test_config_has_no_weird_characters(self):
         """
@@ -68,16 +67,17 @@ class TestSanityCheckConfig(unittest.TestCase):
         only includes alphanumeric characters and JSON punctuation.
         """
         allowed_chars_regex = re.compile(r'[^a-zA-Z0-9\[\]\{\}\s":,_]')
-        with open('config.json') as fp:
+        with open("config.json") as fp:
             contents = fp.read()
         match = allowed_chars_regex.search(contents)
         if match:
             weird_char = match.group(0)
-            line_number = contents[:match.start()].count('\n') + 1
-            self.fail('config.json contains a weird character on line %d: %s %r' % (
-                line_number, unicodedata.name(weird_char), weird_char
-            ))
+            line_number = contents[: match.start()].count("\n") + 1
+            self.fail(
+                "config.json contains a weird character on line %d: %s %r"
+                % (line_number, unicodedata.name(weird_char), weird_char)
+            )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
