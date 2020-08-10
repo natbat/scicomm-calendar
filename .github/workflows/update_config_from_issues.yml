@@ -1,0 +1,39 @@
+name: Add new games from GitHub issues
+
+on:
+  workflow_dispatch:
+  issues:
+    types: [opened]
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - uses: actions/cache@v2
+      name: Configure pip caching
+      # Doing this to avoid over-downloading python dependencies, to save the
+      # Python Software Foundation money
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - name: Install Python dependencies
+      run: |
+        pip install -r requirements.txt
+    - name: Fetch issues and rewrite config.json
+      run: python update_config_from_issues.py
+    - name: Commit and push if it changed
+      run: |-
+        git config --global user.name "scraper-bot"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Updating config.json - ${timestamp}" || exit 0
+        git push
