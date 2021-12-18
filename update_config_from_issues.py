@@ -40,7 +40,7 @@ def run():
     config = json.load(open("config.json"), object_pairs_hook=OrderedDict)
 
     for open_issue in issues_to_add:
-        issue_text = open_issue["title"] + " " + open_issue["body"]
+        issue_text = open_issue["title"] + " " + (open_issue["body"] or "")
         issue_text = issue_text.replace("\u202a", "").replace("\u202c", "")
         hashtags = hashtag_re.findall(issue_text)
         atnames = atname_re.findall(issue_text)
